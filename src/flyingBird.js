@@ -8,15 +8,19 @@ startScreen.addEventListener("click", start);
 document.addEventListener("keydown", pressOn);
 document.addEventListener("keyup", pressOff);
 
+let keys = {};
 function start() {
     console.log("start");
-    
+    gameMessage.classList.add("hide");
+    startScreen.classList.add("hide");
 }
 
-function pressOn() {
-    console.log("On");
+function pressOn(e) {
+keys[e.code] = true;
+    console.log(keys);
 }
 
-function pressOff() {
-    console.log("Off");
+function pressOff(e) {
+keys[e.code] = false;
+    // console.log(e.code);
 }
