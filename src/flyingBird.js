@@ -76,7 +76,7 @@ function buildPipes(startPos) {
     pipe1.start = startPos + totalWidth;
     pipe1.classList.add("pipe");
     pipe1.innerHTML = "<br>" + player.pipe;
-    pipe1.height = Math.floor(Math.random() * 350); // Random height for the upper pipe
+    pipe1.height = Math.floor(Math.random() * 400); // Random height for the upper pipe
     pipe1.style.height = pipe1.height + "px";
     pipe1.style.left = pipe1.start + "px";
     pipe1.style.top = "0px";
