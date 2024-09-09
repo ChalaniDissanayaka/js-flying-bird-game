@@ -1,0 +1,31 @@
+.hide {
+    display: none;
+}
+
+.score {
+    background-color: black;
+    color: white;
+    text-align: center;
+    height: 50px;
+    font-size: 1.5em;
+    font-family: fantasy;
+}
+
+.gameArea {
+    background-color: skyblue;
+    width: 100%;
+    height: 700px;
+    margin: auto;
+}
+
+.startScreen {
+    position: absolute;
+    background-color: red;
+    left: 25%;
+    top: 100px;
+    color: white;
+    width: 50%;
+    padding: 15px;
+    border: 1px solid black;
+    text-align: center;
+}
