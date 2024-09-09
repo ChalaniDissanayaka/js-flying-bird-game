@@ -15,7 +15,7 @@ function start() {
     console.log("start");
 
     // Set the player's movement speed to 2 units per frame
-    player.speed = 2;
+    player.speed = 10;
 
     gameMessage.classList.add("hide"); // Hide the game message element
     startScreen.classList.add("hide"); // Hide the start screen element
@@ -28,6 +28,9 @@ function start() {
     // Create a new span element to represent the bird's wing, assign it a class of "wing", and append it to the bird element
     let wing = document.createElement("span");
     wing.setAttribute("class", "wing");
+    // setting the defult wing object and set data value
+    wing.pos = 15;
+    wing.style.top = wing.pos + "px";  // style the wing
     bird.appendChild(wing);
 
     // Append the bird to the visible game area
@@ -42,29 +45,42 @@ function start() {
 }
 
 function playGame() {
-console.log(player);
+    console.log(player);
     // get the bird and wing element
     let bird = document.querySelector(".bird");
     let wing = document.querySelector(".wing");
+    let move = false;
 
-    // Move the player left by decreasing the x position when the left arrow key is pressed
-    if(keys.ArrowLeft){
+    // Check if the left arrow key is pressed and the player is within the game area's left boundary
+    if (keys.ArrowLeft && player.x > 0) {
         player.x -= player.speed;
+        move = true;
     }
-    if(keys.ArrowRight){
+    // Check if the right arrow key is pressed and the player is within the game area's right boundary
+    if (keys.ArrowRight && player.x < (gameArea.offsetWidth - 50)) {
         player.x += player.speed;
+        move = true;
     }
-    if(keys.ArrowUp){
-        player.y -= player.speed;
+    // Check if the up arrow key is pressed and the player is within the game area's top boundary
+    if ((keys.ArrowUp || keys.Space) && player.y > 0) {
+        player.y -= (player.speed*5);
+        move = true;
     }
-    if(keys.ArrowDown){
+    // Check if the down arrow key is pressed and the player is within the game area's bottom boundary
+    if (keys.ArrowDown && player.y > (gameArea.offsetHeight - 50)) {
         player.y += player.speed;
+        move = true;
     }
+    if (move) {
+        wing.pos = (wing.pos == 15) ? 25 : 15;
+        wing.style.top = wing.pos + "px";
+    }    
+
+    player.y += (player.speed*2);
     // Animation using Js 
     // Update bird's position on the screen by setting its top and left CSS properties
     bird.style.top = player.y + "px";
     bird.style.left = player.x + "px";
-
     // console.log("play");
     window.requestAnimationFrame(playGame);
 }
