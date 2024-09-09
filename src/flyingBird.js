@@ -15,7 +15,9 @@ function start() {
     console.log("start");
 
     // Set the player's movement speed to 2 units per frame
-    player.speed = 10;
+    player.speed = 2;
+    // Set the player score as 0
+    player.score = 0;
 
     gameMessage.classList.add("hide"); // Hide the game message element
     startScreen.classList.add("hide"); // Hide the start screen element
@@ -75,14 +77,20 @@ function playGame() {
         wing.pos = (wing.pos == 15) ? 25 : 15;
         wing.style.top = wing.pos + "px";
     }    
-
+    // Adding automatic gravity
     player.y += (player.speed*2);
+    if(bird.offsetTop > gameArea.offsetHeight) {
+        console.log("game over");
+    }
     // Animation using Js 
     // Update bird's position on the screen by setting its top and left CSS properties
     bird.style.top = player.y + "px";
     bird.style.left = player.x + "px";
     // console.log("play");
     window.requestAnimationFrame(playGame);
+    // Adding the score
+    player.score++;
+    score.innerText = "Score:"+player.score;
 }
 
 function pressOn(e) {
