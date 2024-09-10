@@ -1,5 +1,7 @@
 # Flying Bird Game
 
+- [Live Flying Bird Game](https://flyingbird-game.netlify.app)
+
 ## Description:
 
 The Flying Bird Game is an interactive, browser-based game built using JavaScript, CSS, and HTML. Players control a bird that continuously moves forward, navigating through obstacles (pipes) by pressing keys to make the bird fly. The goal is to avoid colliding with the pipes or falling out of the game area while accumulating points over time. The game features smooth animations, responsive controls, and collision detection, offering an engaging and fun challenge. The colorful design, created with CSS, adds to the visually appealing environment, while HTML provides the structural framework of the game interface.
