@@ -76,7 +76,7 @@ function buildPipes(startPos) {
     pipe1.start = startPos + totalWidth;
     pipe1.classList.add("pipe");
     pipe1.innerHTML = "<br>" + player.pipe;
-    pipe1.height = Math.floor(Math.random() * 400); // Random height for the upper pipe
+    pipe1.height = Math.floor(Math.random() * 350); // Random height for the upper pipe
     pipe1.style.height = pipe1.height + "px";
     pipe1.style.left = pipe1.start + "px";
     pipe1.style.top = "0px";
@@ -86,7 +86,7 @@ function buildPipes(startPos) {
     gameArea.appendChild(pipe1);
 
     // Create the lower pipe
-    let pipeSpace = Math.floor(Math.random() * 250) + 150; // Space between pipes
+    let pipeSpace = Math.floor(Math.random() * 250) + 100; // Space between pipes
     let pipe2 = document.createElement("div");
     pipe2.start = pipe1.start;
     pipe2.classList.add("pipe");
