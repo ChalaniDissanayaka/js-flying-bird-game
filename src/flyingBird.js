@@ -48,7 +48,7 @@ function start() {
     player.pipe = 0; // Initialize the pipe counter to 0
 
     // Set the spacing between pipes
-    let spacing = 300;
+    let spacing = 250;
     // Calculate how many pipes can fit within the game area width
     let howMany = Math.floor(gameArea.offsetWidth / spacing);
     console.log(howMany);
